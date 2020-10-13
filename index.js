@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const app = express();
 const passport = require('passport');
+const keys =  require('./config/keys')
+const app = express();
 
-
+mongoose.connect(keys.mongoURI);
 
 app.use(passport.initialize());
 app.use(passport.session());
